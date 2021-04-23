@@ -5,11 +5,14 @@ metadata:
     service: api-feed
   name: api-feed
 spec:
-  replicas: 3
+  replicas: 2
+  selector:
+    matchLabels:
+      name: api-feed
   template:
     metadata:
       labels:
-        service: api-feed
+        name: api-feed
     spec:
       containers:
         - image: andrewserra/udagram-api-feed
