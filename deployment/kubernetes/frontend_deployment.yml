@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         name: frontend
-        api: external
     spec:
       containers:
         - image: andrewserra/udagram-frontend
