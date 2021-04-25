@@ -5,14 +5,15 @@ metadata:
     service: frontend
   name: frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      name: frontend
+      service: frontend
   template:
     metadata:
       labels:
-        name: frontend
+        service: frontend
+        api: external
     spec:
       containers:
         - image: andrewserra/udagram-frontend

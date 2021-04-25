@@ -8,11 +8,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      name: api-feed
+      service: api-feed
   template:
     metadata:
       labels:
-        name: api-feed
+        service: api-feed
     spec:
       containers:
         - image: andrewserra/udagram-api-feed
@@ -51,11 +51,11 @@ spec:
                 configMapKeyRef:
                   name: env-config
                   key: JWT_SECRET
-            - name: POSTGRES_DATABASE
+            - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
                   name: env-config
-                  key: POSTGRES_DATABASE
+                  key: POSTGRES_DB
             - name: POSTGRES_HOST
               valueFrom:
                 configMapKeyRef:
