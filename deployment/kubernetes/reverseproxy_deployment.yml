@@ -8,11 +8,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      name: reverseproxy
+      service: reverseproxy
   template:
     metadata:
       labels:
-        name: reverseproxy
+        service: reverseproxy
     spec:
       containers:
         - image: andrewserra/reverse-proxy
